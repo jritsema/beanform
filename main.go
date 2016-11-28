@@ -84,9 +84,7 @@ func beanform(cmd *cobra.Command, args []string) {
 	}
 
 	//marshal beanstalkHCL
-
 	outFile, _ := os.Create("main.tf")
-
 	const padding = 2
 	w := tabwriter.NewWriter(outFile, 0, 0, padding, ' ', tabwriter.DiscardEmptyColumns)
 
@@ -181,7 +179,7 @@ resource "aws_elastic_beanstalk_environment" "{{.Environment}}" {
 `
 
 	//create a formatted template
-	tmpl, err := template.New("resource").Parse(hcl)
+	tmpl, err := template.New("main.tf").Parse(hcl)
 
 	//execute the template with the data
 	err = tmpl.Execute(w, beanstalkHCL)
