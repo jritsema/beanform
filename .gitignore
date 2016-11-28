@@ -1,2 +1,3 @@
 beanform
 *.tfstate
+main.tf
