@@ -1,3 +1,4 @@
 beanform
 *.tfstate
 main.tf
+index.js
